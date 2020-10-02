@@ -11,28 +11,25 @@ Given("The user is logged in the Webapp", () => {
   lg.clientLogin();
   lg.credenTials();
   lg.access();
-  lg.LoggedOn()
+  lg.LoggedOn();
 });
 
 When("the user select the Portfolio Detail option", () => {
-
-    ptrfDetail.selectPtrfdetail();
-  
+  ptrfDetail.selectPtrfdetail();
 });
 
 When("Check to see that Current Projected Gross IRR loads", () => {
-  
-    ptrfDetail.validateGrossIRR();
+  ptrfDetail.validateGrossIRR();
 });
 
 When("Check to see that Current Projected Profit loads", () => {
-  
+  ptrfDetail.validateProjectedprofit();
 });
 
 When("Check to see that Current Projected Equity Multiple IRR loads", () => {
-  
+  ptrfDetail.validateEquitymultiple();
 });
 
 Then("Verify data loads in table", () => {
-  
+  ptrfDetail.varifyTable();
 });
