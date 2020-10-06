@@ -26,6 +26,9 @@ When("Make sure save search works", () => {
 });
 
 When("Make sure map, filters and edit columns works", () => {
+
+  dealMng.mapLoads();
+
   
 });
 
@@ -34,5 +37,7 @@ When("Make sure clicking into the deal record from the results table works", () 
 });
 
 Then("Make sure Deal Over Popout works", () => {
+
+  dealMng.popOuts();
   
 });

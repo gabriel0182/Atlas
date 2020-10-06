@@ -65,6 +65,30 @@ class dealMnger{
     return this;
     }
 
+mapLoads(){
+const map = cy.get("[class='gm-style-pbc']")
+map.should('be.visible', true)
+return this;
+}
+popOuts(){
+ const record = cy.get("[class='rt-tr -even']")
+ .within(()=>{
+ cy.get("div")
+ .get("[role='gridcell']")
+ .contains("North Park Shopping Center")
+ .click(348,469,{force: true})
+ })
+ record.wait(2000)
+ const popWindow = cy.get("[class='slide-content']")
+ popWindow.should('be.visible',true)
+  const loanButton = cy.get("[class='nativ-button small blue-button']")
+  .contains("Loan Overview")
+  loanButton.click({force:true})
+  loanButton.wait(3000)
+  const loanPage = cy.get("[id='page-loan-overview']")
+  loanPage.should('be.visible', true)
+ return this;
+}
 
 }
 export default dealMnger;
