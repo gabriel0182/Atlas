@@ -65,6 +65,26 @@ class dealMnger{
     return this;
     }
 
+    editColumns(){
+const editButton = cy.get("[id='config-column-edit-icon-container']")
+.get("[class='nativ-button small blue-button']")
+.contains("Edit Columns")
+editButton.click({force: true})
+const column1 = cy.get("[for='ANoteUWNCFDSCRInterpreted']")
+.contains("UW NCF DSCR")
+column1.click({force: true})
+const column2 = cy.get("[for='ANoteUWNCFDYInterpreted']")
+.contains("UW NCF DY")
+column2.click({force: true})
+const saveChanges = cy.get("[class='nativ-button small blue-button']")
+.contains("Save Changes")
+saveChanges.click({force: true})
+const verifyColumn1 = cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[12]/div[1]")
+verifyColumn1.should('contain','UW NCF DSCR')
+const verifyColumn2 = cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[13]/div[1]")
+verifyColumn2.should('contain','UW NCF DY')
+}
+
 mapLoads(){
 const map = cy.get("[class='gm-style-pbc']")
 map.should('be.visible', true)

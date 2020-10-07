@@ -12,6 +12,4 @@ Feature: Verify Deal Manager Page
 
     And Make sure map, filters and edit columns works
 
-    And Make sure clicking into the deal record from the results table works
-
     Then Make sure Deal Over Popout works

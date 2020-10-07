@@ -28,11 +28,8 @@ When("Make sure save search works", () => {
 When("Make sure map, filters and edit columns works", () => {
 
   dealMng.mapLoads();
+  dealMng.editColumns()
 
-  
-});
-
-When("Make sure clicking into the deal record from the results table works", () => {
   
 });
 
