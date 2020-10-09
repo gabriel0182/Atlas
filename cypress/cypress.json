@@ -3,6 +3,8 @@
     "retries": 0,
     "execTimeout": 100000,
     "pageLoadTimeout": 300000,
+    "trashAssetsBeforeRuns": true,
     "chromeWebSecurity": false,
-    "watchForFileChanges": false
+    "watchForFileChanges": false,
+    "fileServerFolder": "downloads"
 }

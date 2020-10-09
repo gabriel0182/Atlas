@@ -31,6 +31,6 @@ When("Confirm Map loads", () => {
 
 Then("Confirm Export works", () => {
 
-  
-  
+  ptrfTenants.confirmExports();
+    
 });

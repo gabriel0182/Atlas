@@ -12,8 +12,24 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const cucumber = require('cypress-cucumber-preprocessor').default
- 
+const cucumber = require("cypress-cucumber-preprocessor").default;
+const fs = require('fs');
+const path = './cypress/downloads/Tenant Exposure.xlsx'
+
+
 module.exports = (on, config) => {
-  on('file:preprocessor', cucumber())
+  
+  on("file:preprocessor", cucumber());
+  on('task', {
+    unlink(path) {
+      try {
+        fs.unlinkSync(path)
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
+      return null
+    }
+  })
 }
+

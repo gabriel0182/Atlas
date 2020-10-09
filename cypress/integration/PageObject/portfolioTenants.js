@@ -1,7 +1,7 @@
 ///  <reference types="cypress"/>
 
 class portfolioTenants {
-  goTenants(){
+  goTenants() {
     const ptrfManager = cy
       .get("[class='btn btn-link']")
       .contains("Portfolio Management");
@@ -11,7 +11,7 @@ class portfolioTenants {
     tenantsPage.wait(2000);
     return this;
   }
-  tenantsSearch(){
+  tenantsSearch() {
     const testData = require("../../fixtures/searchTenants.json");
     testData.forEach((testDataRow) => {
       const data = {
@@ -32,12 +32,26 @@ class portfolioTenants {
     });
     return this;
   }
-confirmMap(){
- const getMap = cy.get("[class='comp-google-maps-container']")
- getMap.should('be.visible',true)
- return this;
-}
+  confirmMap() {
+    const getMap = cy.get("[class='comp-google-maps-container']");
+    getMap.should("be.visible", true);
+    return this;
+  }
+  confirmExports() {
+    const exportButton = cy
+      .get("[class='nativ-button small blue-button']")
+      .contains("Export");
+    exportButton.click({ force: true });
+    cy.wait(5000);
+    const file = cy
+      .readFile("./cypress/downloads/Tenant Exposure.xlsx", "utf-8")
+      .then((xlsx) => {
+        expect(xlsx).contain("Tenant Exposure");
+      });
+      cy.task('unlink','./cypress/downloads/Tenant Exposure.xlsx' , { timeout: 30000 });
 
+    return this;
+  }
 }
 
 export default portfolioTenants;
