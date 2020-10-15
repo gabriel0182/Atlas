@@ -48,7 +48,9 @@ class portfolioTenants {
       .then((xlsx) => {
         expect(xlsx).contain("Tenant Exposure");
       });
-      cy.task('unlink','./cypress/downloads/Tenant Exposure.xlsx' , { timeout: 30000 });
+    cy.task("unlink", "./cypress/downloads/Tenant Exposure.xlsx", {
+      timeout: 30000,
+    });
 
     return this;
   }

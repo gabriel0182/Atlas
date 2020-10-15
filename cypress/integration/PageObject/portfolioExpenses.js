@@ -63,6 +63,24 @@ class portfolioExpenses {
         getMap.should('be.visible', true)
         return this;
     }
+
+    confirmExport(){
+      const exportButton = cy.get('[class="col-sm-4"]')
+      .get('[class="nativ-button small blue-button"]')
+      .contains("Export")
+      exportButton.click({force: true})
+      cy.wait(5000);
+    const file = cy
+      .readFile("./cypress/downloads/Line Item Export.xlsx", "utf-8")
+      .then((xlsx) => {
+        expect(xlsx).contain("Line Item Export");
+      });
+    cy.task("unlink2", "./cypress/downloads/Line Item Export.xlsx", {
+      timeout: 30000,
+    });
+
+    return this;
+    }
     
 }
 export default portfolioExpenses;

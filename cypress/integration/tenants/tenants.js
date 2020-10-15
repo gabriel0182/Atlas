@@ -15,22 +15,14 @@ Given("The user is logged in the Webapp", () => {
 });
 
 When("the user select the Portfolio Tenants option", () => {
-
-    ptrfTenants.goTenants();
-    ptrfTenants.tenantsSearch();
-    
-  
+  ptrfTenants.goTenants();
+  ptrfTenants.tenantsSearch();
 });
 
 When("Confirm Map loads", () => {
-  
-    ptrfTenants.confirmMap();
-  
+  ptrfTenants.confirmMap();
 });
 
-
 Then("Confirm Export works", () => {
-
   ptrfTenants.confirmExports();
-    
 });

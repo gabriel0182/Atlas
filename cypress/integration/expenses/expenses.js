@@ -22,6 +22,11 @@ When("Confirm Expenses filters works", () => {
   ptrfExpenses.expensesSearch();
 });
 
-Then("Confirm Map loads", () => {
+When("Confirm Map loads", () => {
   ptrfExpenses.expensesMap();
+});
+
+Then("Confirm Export works", () => {
+ptrfExpenses.confirmExport();
+
 });

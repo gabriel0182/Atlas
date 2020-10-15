@@ -10,4 +10,6 @@ Feature: Verify Portfolio Expenses
 
     And Confirm Expenses filters works
 
-    Then Confirm Map loads
+    And Confirm Map loads
+    
+    Then Confirm Export works
