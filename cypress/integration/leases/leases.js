@@ -19,11 +19,10 @@ When("the user select the Portfolio Leases option", () => {
 });
 
 When("Confirm Map loads", () => {
-    ptrfLeases.leasesSearch();
-    ptrfLeases.mapValidation();
-
+  ptrfLeases.leasesSearch();
+  ptrfLeases.mapValidation();
 });
 
 Then("Confirm Export works", () => {
-
+  ptrfLeases.validateExport();
 });

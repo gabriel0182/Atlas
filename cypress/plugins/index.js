@@ -16,6 +16,7 @@ const cucumber = require("cypress-cucumber-preprocessor").default;
 const fs = require('fs');
 const path = './cypress/downloads/Tenant Exposure.xlsx'
 const path2 = './cypress/downloads/Line Item Export.xlsx'
+const path3 = './cypress/downloads/Lease Export.xlsx'
 
 
 module.exports = (on, config) => {
@@ -36,6 +37,17 @@ module.exports = (on, config) => {
     unlink2(path2) {
       try {
         fs.unlinkSync(path2)
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
+      return null;
+    }
+  })
+  on('task', {
+    unlink3(path3) {
+      try {
+        fs.unlinkSync(path3)
         //file removed
       } catch(err) {
         console.error(err)
