@@ -21,7 +21,7 @@ class napSearch {
           .get('[role="gridcell"]')
           .contains(`${data.result}`);
         selectResult.click({ force: true });
-        selectResult.wait(1000);
+        selectResult.wait(4000);
       });
     });
     return this;
