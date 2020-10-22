@@ -6,5 +6,5 @@
     "trashAssetsBeforeRuns": true,
     "chromeWebSecurity": false,
     "watchForFileChanges": false,
-    "fileServerFolder": "downloads"
+    "fileServerFolder": "./cypress/downloads/"
 }

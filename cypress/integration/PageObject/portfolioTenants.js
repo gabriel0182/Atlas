@@ -38,17 +38,14 @@ class portfolioTenants {
     return this;
   }
   confirmExports() {
-    const exportButton = cy
-      .get("[class='nativ-button small blue-button']")
-      .contains("Export");
+    const exportButton = cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/section[3]/div[1]/div[1]/div[1]/button[1]")
     exportButton.click({ force: true });
     cy.wait(5000);
-    const file = cy
-      .readFile("./cypress/downloads/Tenant Exposure.xlsx", "utf-8")
+    const file = cy.readFile("cypress/downloads/Tenant Exposure.xlsx", "UTF-8")
       .then((xlsx) => {
-        expect(xlsx).contain("Tenant Exposure");
+        expect(xlsx).contain('Tenant Exposure');
       });
-    cy.task("unlink", "./cypress/downloads/Tenant Exposure.xlsx", {
+    cy.task("unlink", "cypress/downloads/Tenant Exposure.xlsx", {
       timeout: 30000,
     });
 

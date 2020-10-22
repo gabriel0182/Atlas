@@ -40,9 +40,13 @@ class portAnalytics {
   }
 
   strfGraphs() {
-    const dealStatus = cy.get("[id='deal-status-donut']");
-    dealStatus.should("contain", "Funded/Performing");
-    const originator = cy.get("[id='origination-donut']");
+    const dealStatus = cy.get('[class="col-sm-12"]')
+    .get('[id="deal-status-donut"]')
+    .get('[class="legend-label"]')
+    dealStatus.should("contain", "Funded");
+    const originator = cy.get('[class="col-sm-12"]')
+    .get('[id="origination-donut"]')
+    .get('[class="legend-label"]')
     originator.should("contain", "John Doe");
     const loanType = cy.get("[id='deal-type-donut']");
     loanType.should("contain", "TBD");
