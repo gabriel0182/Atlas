@@ -59,6 +59,7 @@ class reviewDeal {
     const statusField = cy.
     xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/select[1]")
       statusField.select(`${this.status1}`).type("{enter}{enter}")
+      statusField.wait(3000) 
     const validateStatus = cy
     .get('[data-row="Deal Status"]')
     .get('[class="datum-value"]')
