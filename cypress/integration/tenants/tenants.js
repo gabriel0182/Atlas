@@ -19,10 +19,12 @@ When("the user select the Portfolio Tenants option", () => {
   ptrfTenants.tenantsSearch();
 });
 
-When("Confirm Map loads", () => {
-  ptrfTenants.confirmMap();
+When("Confirm Export works", () => {
+  ptrfTenants.confirmExports();
+  
 });
 
-Then("Confirm Export works", () => {
-  ptrfTenants.confirmExports();
+Then("Confirm Map loads", () => {
+  ptrfTenants.confirmMap();
+  ptrfTenants.deleteFile();
 });

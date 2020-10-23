@@ -8,5 +8,5 @@
   "chromeWebSecurity": false,
   "watchForFileChanges": false,
   "pluginsFile": "cypress/plugins/index.js",
-  "fileServerFolder": "./cypress/downloads/"
+  "fileServerFolder": "./cypress/downloads"
 }

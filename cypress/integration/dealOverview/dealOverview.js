@@ -7,6 +7,8 @@ const nap = new napSearch();
 const dealOver = new reviewDeal();
 
 Given("The user is logged in the Webapp", () => {
+  nap.getData();
+  dealOver.getData()
   lg.landing();
   lg.clientLogin();
   lg.credenTials();
@@ -15,7 +17,7 @@ Given("The user is logged in the Webapp", () => {
 });
 
 When("search by Atlas Tower deal record", () => {
-  nap.search();
+  nap.searchBar();
 });
 
 When(
@@ -32,4 +34,6 @@ When("Confirm that Map Loads", () => {
   dealOver.confirmMap();
 });
 
-Then("Confirm you are able to change Deal Status", () => {});
+Then("Confirm you are able to change Deal Status", () => {
+  dealOver.selectStatus();
+});

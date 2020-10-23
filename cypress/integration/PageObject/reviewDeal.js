@@ -1,6 +1,14 @@
 ///  <reference types="cypress"/>
 
 class reviewDeal {
+  getData() {
+    cy.fixture("nap.json").then((data) => {
+      (this.search = data.search),
+      (this.result = data.result),
+      (this.status1 = data.status1),
+      (this.status2 = data.status2)
+    });
+  }
   loanOverview() {
     const loanTable = cy
       .get('[class="col-xl-6 col-md-12 col-sm-12"]')
@@ -39,6 +47,32 @@ class reviewDeal {
     .invoke('show')
     .scrollIntoView()
     map.should('be.visible', true);
+    return this;
+  }
+  selectStatus(){
+    const sl = cy
+    .get('[data-row="Deal Status"]')
+    .get('[class="datum-value"]')
+    .get('[class="rice"]')
+    .contains(`${this.status2}`)
+    sl.click({force: true})
+    const statusField = cy.
+    xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/select[1]")
+      statusField.select(`${this.status1}`).type("{enter}{enter}")
+    const validateStatus = cy
+    .get('[data-row="Deal Status"]')
+    .get('[class="datum-value"]')
+    .get('[class="rice"]')
+    validateStatus.should('contain',`${this.status1}`)
+    const statusBack = cy
+    .get('[data-row="Deal Status"]')
+    .get('[class="datum-value"]')
+    .get('[class="rice"]')
+    .contains(`${this.status1}`)
+    statusBack.click({force: true})
+    const selectStatus = cy.
+    xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/select[1]")
+    selectStatus.select(`${this.status2}`).type("{enter}{enter}") 
     return this;
   }
 }

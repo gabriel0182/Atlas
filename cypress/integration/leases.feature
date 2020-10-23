@@ -8,6 +8,6 @@ Feature: Verify Portfolio Leases
 
     When the user select the Portfolio Leases option
 
-    And Confirm Map loads
+    And Confirm Export works
 
-    Then Confirm Export works
+    Then Confirm Map loads

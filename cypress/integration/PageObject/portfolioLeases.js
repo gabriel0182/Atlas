@@ -40,6 +40,21 @@ class portfolioLeases {
     });
     return this;
   }
+  validateExport() {
+    const exportButton = cy
+      .get('[class="col-sm-4"]')
+      .get('[class="nativ-button small blue-button"]')
+      .contains("Export");
+    exportButton.click({ force: true });
+    exportButton.clock().then((clock) => {
+      clock.tick(2000)
+    })
+    cy.readFile("cypress/downloads/Lease Export.xlsx", "utf-8")
+      .then((xlsx) => {
+        expect(xlsx).contain("Lease Export");
+      });
+       return this;
+  }
   mapValidation() {
     const map = cy
       .get('[class="comp-google-maps-container"]')
@@ -47,23 +62,13 @@ class portfolioLeases {
     map.should("be.visible", true);
     return this;
   }
-  validateExport() {
-    const exportButton = cy
-      .get('[class="col-sm-4"]')
-      .get('[class="nativ-button small blue-button"]')
-      .contains("Export");
-    exportButton.click({ force: true });
-    exportButton.wait(2000);
-    const file = cy
-      .readFile("cypress/downloads/Lease Export.xlsx", "utf-8")
-      .then((xlsx) => {
-        expect(xlsx).contain("Lease Export");
-      });
+ 
+  deletefile(){
     cy.task("unlink3", "cypress/downloads/Lease Export.xlsx", {
       timeout: 30000,
     });
 
-    return this;
+
   }
 }
 export default portfolioLeases;

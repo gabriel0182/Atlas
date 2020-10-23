@@ -7,6 +7,7 @@ const lg = new login();
 const nap = new napSearch();
 
 Given("The user is logged in the Webapp", () => {
+  nap.getData();
   lg.landing();
   lg.clientLogin();
   lg.credenTials();
@@ -15,7 +16,7 @@ Given("The user is logged in the Webapp", () => {
 });
 
 When("search by Atlas Tower deal record", () => {
-  nap.search();
+  nap.searchBar();
 });
 
 Then("the Atlas Tower deal is shown", () => {

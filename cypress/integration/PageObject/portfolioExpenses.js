@@ -69,18 +69,21 @@ class portfolioExpenses {
       .get('[class="nativ-button small blue-button"]')
       .contains("Export")
       exportButton.click({force: true})
-      cy.wait(5000);
-    const file = cy
+      exportButton.clock().then((clock) => {
+        clock.tick(2000)
+      })
+    cy
       .readFile("cypress/downloads/Line Item Export.xlsx", "utf-8")
       .then((xlsx) => {
         expect(xlsx).contain("Line Item Export");
       });
+      return this;
+    }
+      deleteFile(){
     cy.task("unlink2", "cypress/downloads/Line Item Export.xlsx", {
       timeout: 30000,
     });
-
     return this;
+  }
     }
-    
-}
 export default portfolioExpenses;

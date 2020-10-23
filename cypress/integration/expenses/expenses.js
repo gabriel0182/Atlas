@@ -22,11 +22,11 @@ When("Confirm Expenses filters works", () => {
   ptrfExpenses.expensesSearch();
 });
 
-When("Confirm Map loads", () => {
-  ptrfExpenses.expensesMap();
+When("Confirm Export works", () => {
+  ptrfExpenses.confirmExport(); 
 });
 
-Then("Confirm Export works", () => {
-ptrfExpenses.confirmExport();
-
+Then("Confirm Map loads", () => {
+ptrfExpenses.expensesMap();
+ptrfExpenses.deleteFile();
 });
