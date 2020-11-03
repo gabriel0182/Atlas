@@ -23,20 +23,15 @@ When("search by Atlas Tower deal record", () => {
   nap.searchBar();
 });
 
-When(
-  "Select deal Documents option and create a new document folder",
-  () => {
-        dealdc.selectDealDocs();
-  }
-);
+When("Select deal Documents option and create a new document folder", () => {
+  dealdc.selectDealDocs();
+});
 
 When("Confirm you can upload a new document", () => {
-    dealdc.uploadFile();
-  
+  dealdc.uploadFile();
 });
 
 Then("Confirm you can delete a document", () => {
-
   dealdc.deleteFolder();
-  
+  dealdc.uploadFile2();
 });

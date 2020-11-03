@@ -48,13 +48,8 @@ class dealDocs {
     const attFile = cy.xpath(
       "/html[1]/body[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/button[2]"
     );
-    attFile.attachFile(fileName, {
-      mimeType:
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      subjectNature: "shadow",
-      subjectType: "input",
-      force: true,
-    });
+    attFile
+    .attachFile(fileName, {force: true,})
     //atthButton.attachFile(fileName, { subjectType: "drag-n-drop" })
     return this;
   }
@@ -79,6 +74,32 @@ class dealDocs {
       cy.get("button").contains("Delete");
     });
     confirmDelete.click({ force: true });
+    return this;
+  }
+  uploadFile2() {
+    /**const fileName2 = "1. Portfolio Analytics Report.xlsx";
+    const attFile2 = cy.
+    get('[id="page-loan-documents-manager"]')
+    .get('[class="flex-row align-center justify-end"]')
+    .within(()=>{
+        cy.get("button")
+        .contains("Upload Files")
+        .click({force: true})
+
+    })
+    attFile2
+    .attachFile(fileName2, { subjectType: 'drag-n-drop', force: true})
+    //atthButton.attachFile(fileName, { subjectType: "drag-n-drop" })*/
+    const fileName = '1. Portfolio Analytics Report.xlsx';
+    const encoding = 'binary';
+    const attFile2 = cy.
+    get('.flex-row > :nth-child(3)')
+    .click({force: true})
+    cy.fixture(fileName, encoding)
+    .then(fileContent => {
+      
+      attFile2.attachFile({fileContent, fileName, mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', encoding},{ force: true });
+    });
     return this;
   }
 }
