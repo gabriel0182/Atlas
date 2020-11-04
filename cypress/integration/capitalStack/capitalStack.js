@@ -8,6 +8,7 @@ const capSt = new capitalStructure();
 
 
 Given("The user is logged in the Webapp", () => {
+  capSt.getData();
   nap.getData();
   lg.landing();
   lg.clientLogin();
@@ -26,9 +27,12 @@ When("Select Capital Stack and Confirm that data loads in pop out", () => {
 });
 
 When("Confirm create new Tranche works", () => {
+
+  capSt.addCapitalStacks();
   
 });
 
 Then("Confirm delete Tranche works", () => {
  
+  capSt.deleteCapitalStacks();
 });
