@@ -1,10 +1,10 @@
 import login from "../PageObject/login.js";
 import napSearch from "../PageObject/napSearch.js";
-import salesComps from "../PageObject/salesComps.js";
+import rentComps from "../PageObject/rentComps.js";
 
 const lg = new login();
 const nap = new napSearch();
-const sC = new salesComps();
+const rC = new rentComps();
 
 Given("The user is logged in the Webapp", () => {
   nap.getData();
@@ -19,6 +19,6 @@ When("Search by Atlas Tower deal record", () => {
   nap.searchBar();
 });
 
-Then("Select Properties, then Sales Comps and Confirm Map Loads", () => {
-  sC.selectsalesComps();
+Then("Select Properties, then Rent Comps and Confirm Map Loads", () => {
+  rC.selectrentComps();
 });
