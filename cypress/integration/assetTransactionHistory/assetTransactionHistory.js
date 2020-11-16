@@ -24,4 +24,6 @@ When(
   }
 );
 
-Then("Select Mezz from Chose Note dropdown and confirm data", () => {});
+Then("Select Mezz from Chose Note dropdown and confirm data", () => {
+  asset.verifyMezz();
+});
