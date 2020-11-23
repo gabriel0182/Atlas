@@ -6,5 +6,9 @@
     "trashAssetsBeforeRuns": true,
     "chromeWebSecurity": false,
     "watchForFileChanges": false,
-    "fileServerFolder": "./cypress/downloads"
+    "fileServerFolder": "./cypress/downloads",
+    "reporter": "junit",
+    "reporterOptions": {
+        "mochaFile": "test/results/e2e-tests-[hash].xml"
+    }
 }

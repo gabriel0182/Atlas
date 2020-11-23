@@ -23,11 +23,13 @@ When("search by Atlas Tower deal record", () => {
 When(
   "Go to IRR Analysis and Select Mezz from Choose Tranche dropdown and Mezzanine - AM Update from the Choose Forecast Drop down",
   () => {
-      IRR.selectIRR();
-    
+    IRR.selectIRR();
   }
 );
 
-Then("Confirm values for IRR, Total Profit and Multiple are not 0 or negative", () => {
-  
-});
+Then(
+  "Confirm values for IRR, Total Profit and Multiple are not 0 or negative",
+  () => {
+    IRR.confirmValues();
+  }
+);

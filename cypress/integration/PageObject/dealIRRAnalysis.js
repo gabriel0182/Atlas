@@ -26,10 +26,31 @@ selectIRR(){
     .get(':nth-child(3) > .nativ-button')
     run.click({force:true})
     run.wait(2000)
+    const verifyTable = cy.get('[class="col"]')
+    .get('[class="react-table-container nativ-table nativ-card"]')
+    .get('[class="container-fluid"]')
+    verifyTable.should('contain','IRR Data')
     return this;
 
 }
-
+confirmValues(){
+    const IRRValue = cy
+    .get(':nth-child(2) > .container > :nth-child(1) > :nth-child(2)')
+    IRRValue.should('not.equal',0)
+    IRRValue.should('not.equal','-1.20%')
+    IRRValue.should('not.equal','(1.20%)')
+    const proFit = cy
+    .get(':nth-child(2) > .container > :nth-child(2) > :nth-child(2)')
+    proFit.should('not.equal',0)
+    proFit.should('not.equal','($1,598,093)')
+    proFit.should('not.equal','$-1,598,093')
+    const mulTiple = cy
+    .get(':nth-child(2) > .container > :nth-child(3) > :nth-child(2)')
+    mulTiple.should('not.equal',0)
+    mulTiple.should('not.equal','-1.04x')
+    mulTiple.should('not.equal','(1.04x)')
+    return this;
+}
 
 }
 export default dealIRRAnalysis;
