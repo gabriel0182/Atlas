@@ -3,10 +3,14 @@
 class portTrends {
     selectPt(){
         const portMng = cy
-        .get("[class='nativ-insights']")
-        .contains("Portfolio Management");
+        .get(':nth-child(9) > .icon-button')
+      .contains("Portfolio Management");
       portMng.click({ force: true });
-      const portTr = cy.get("[title='Portfolio Trends']")
+      const portTr = cy
+      .get('[class="level-2 d-block"]')
+      .get('[class="display-link  "]')
+      .get('[href="/app/v2/portfolioanalytics"]')
+      .get('[class="standard-button null link"]')
       .contains("Portfolio Trends")
       portTr.click({force: true})
       portTr.wait(2000)
