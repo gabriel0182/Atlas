@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="57.642" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-11-25T00:47:04" tests="0" file="cypress\integration\portfolioAnalytics.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Verify Portfolio Analytics" timestamp="2020-11-25T00:47:04" tests="1" failures="0" time="57.642">
+    <testcase name="Verify Portfolio Analytics Test Portfolio Analytics data" time="57.642" classname="Test Portfolio Analytics data">
+    </testcase>
+  </testsuite>
+</testsuites>

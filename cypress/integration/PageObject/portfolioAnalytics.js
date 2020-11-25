@@ -3,11 +3,13 @@
 class portAnalytics {
   selectPA() {
     const portMng = cy
-      .get("[class='nativ-insights']")
+      .get(':nth-child(9) > .icon-button')
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const portAnl = cy
-      .get("[title='Portfolio Analytics']")
+      .get('[class="level-2 d-block"]')
+      .get('[class="display-link selected "]')
+      .get('[class="standard-button null link"]')
       .contains("Portfolio Analytics");
     portAnl.click({ force: true });
     portAnl.wait(2000);
