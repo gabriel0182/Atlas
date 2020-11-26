@@ -3,11 +3,14 @@
 class portDetail {
   selectPtrfdetail() {
     const portMng = cy
-      .get("[class='nativ-insights']")
+      .get(':nth-child(9) > .icon-button')
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const ptrfDetail = cy
-      .get("[title='Portfolio Detail']")
+    .get('[class="level-2 d-block"]')
+    .get('[class="display-link  "]')
+    .get('[href="/app/v2/portfolioanalytics"]')
+    .get('[class="standard-button null link"]')
       .contains("Portfolio Detail");
     ptrfDetail.click({ force: true });
     const testData = require("../../fixtures/prtfDetail.json");
@@ -33,9 +36,7 @@ class portDetail {
   }
   validateGrossIRR() {
     const grossIRR = cy
-      .get(
-        "[class='rt-td rt-td styled-table__column d-flex justify-content-end right-align-padding styled-table__cell styled-table__cell--right rt-td styled-table__column']"
-      )
+    .get(':nth-child(5) > .col')
       .get("[role='gridcell']")
       .get("[style='flex: 100 0 auto; width: 100px;']");
     grossIRR.should("not.have.text", "0");
