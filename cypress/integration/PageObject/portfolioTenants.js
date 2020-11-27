@@ -3,10 +3,15 @@
 class portfolioTenants {
   goTenants() {
     const ptrfManager = cy
-      .get("[class='btn btn-link']")
+    .get(':nth-child(9) > .icon-button')
       .contains("Portfolio Management");
     ptrfManager.click({ force: true });
-    const tenantsPage = cy.get("[title='Tenants']").contains("Tenants");
+    const tenantsPage = cy
+    .get('[class="level-2 d-block"]')
+    .get('[class="display-link  "]')
+    .get('[href="/app/v2/portfolioanalytics"]')
+    .get('[class="standard-button null link"]')
+    .contains("Tenants");
     tenantsPage.click({ force: true });
     tenantsPage.wait(2000);
     return this;
