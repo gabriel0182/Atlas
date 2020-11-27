@@ -8,6 +8,4 @@ Feature: Verify Portfolio Tenants
 
     When the user select the Portfolio Tenants option
 
-    And Confirm Export works
-
     Then Confirm Map loads
