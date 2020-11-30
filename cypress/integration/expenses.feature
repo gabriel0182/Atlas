@@ -9,7 +9,5 @@ Feature: Verify Portfolio Expenses
     When the user select the Portfolio Expenses option
 
     And Confirm Expenses filters works
-
-    And Confirm Export works
     
     Then Confirm Map loads

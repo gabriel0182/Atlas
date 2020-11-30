@@ -3,10 +3,14 @@
 class portfolioExpenses {
     goExpenses(){
         const ptrfManager = cy
-          .get("[class='btn btn-link']")
-          .contains("Portfolio Management");
+        .get(':nth-child(9) > .icon-button')
+        .contains("Portfolio Management");
         ptrfManager.click({ force: true });
-        const expensesOption = cy.get('[title="Expenses"]')
+        const expensesOption = cy
+        .get('[class="level-2 d-block"]')
+        .get('[class="display-link  "]')
+        .get('[href="/app/v2/portfolioanalytics"]')
+        .get('[class="standard-button null link"]')
         .contains("Expenses")
         expensesOption.click({force: true})
         expensesOption.wait(2000)
@@ -53,7 +57,7 @@ class portfolioExpenses {
              confirmProperty.should('contain',`${data.property}`)
              .should('contain',`${data.city}`)
              .should('contain',`${data.type}`)
-             confirmProperty.wait(2000)
+             confirmProperty.wait(4000)
             })
         })
         return this;
