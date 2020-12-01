@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2020-12-01T20:32:21" tests="0" file="cypress\integration\leases.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Verify Portfolio Leases" timestamp="2020-12-01T20:32:21" tests="1" failures="1" time="0">
+    <testcase name="Verify Portfolio Leases Test Portfolio Leases data" time="0" classname="Test Portfolio Leases data">
+      <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Cannot read property &apos;label&apos; of undefined
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress.
+
+  > Cannot read property 'label' of undefined
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at ti.mapSingleSelectToFilter (https://dev.nativ.co/static/js/main.b7522945.chunk.js:1:557125)
+    at onSubmit (https://dev.nativ.co/static/js/main.b7522945.chunk.js:1:627810)
+    at Object.m (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2809662)
+    at _ (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2809805)
+    at https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2809951
+    at S (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2810037)
+    at A (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2810486)
+    at M (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2810298)
+    at T (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2810646)
+    at Cn (https://dev.nativ.co/static/js/2.666df552.chunk.js:2:2837716)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

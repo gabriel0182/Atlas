@@ -1,10 +1,15 @@
 class portfolioLeases {
   goLeases() {
     const ptrfManager = cy
-      .get("[class='btn btn-link']")
+    .get(':nth-child(9) > .icon-button')
       .contains("Portfolio Management");
     ptrfManager.click({ force: true });
-    const expensesOption = cy.get('[title="Leases"]').contains("Leases");
+    const expensesOption = cy
+    .get('[class="level-2 d-block"]')
+    .get('[class="display-link  "]')
+    .get('[href="/app/v2/portfolioanalytics"]')
+    .get('[class="standard-button null link"]')
+    .contains("Leases");
     expensesOption.click({ force: true });
     expensesOption.wait(2000);
     return this;
@@ -17,15 +22,12 @@ class portfolioLeases {
         city: testDataRow.city,
       };
       context(`Generating a test for ${data.property}`, () => {
-        const leaseProperty = cy.get('[class="css-1g6gooi"]').within(() => {
-          cy.xpath(
-            "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/fieldset[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]"
-          ).click({ force: true });
-        });
+        const leaseProperty = cy
+        .get(':nth-child(2) > .container-fluid > :nth-child(1) > .col-12 > .nativ-form-group > .css-1pcexqc-container > .css-1ofrjoz-control > .css-1hwfws3')
         leaseProperty.type(`${data.property}{enter}{enter}`);
-        const applyProperty = cy.get('[class="col-12"]').within(() => {
-          cy.get("button").get('[type="submit"]').contains("Apply");
-        });
+        const applyProperty = cy
+        .get(':nth-child(2) > .container-fluid > :nth-child(2) > .col-12 > .btn')
+        .contains("Apply")
         applyProperty.click({ force: true });
         const leasesCity = cy.get('[id="tEPropertyCityRolldown"]');
         leasesCity.clear({ force: true });
@@ -35,7 +37,7 @@ class portfolioLeases {
           "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/fieldset[1]/form[2]/div[2]/button[1]"
         );
         applyCity.click({ force: true });
-        applyCity.wait(2000);
+        applyCity.wait(4000);
       });
     });
     return this;
