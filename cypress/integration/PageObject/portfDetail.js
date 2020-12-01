@@ -3,7 +3,7 @@
 class portDetail {
   selectPtrfdetail() {
     const portMng = cy
-      .get(':nth-child(9) > .icon-button')
+    .get(':nth-child(9) > .icon-button')
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const ptrfDetail = cy

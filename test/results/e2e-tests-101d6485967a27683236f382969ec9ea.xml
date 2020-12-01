@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="115.993" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-12-01T22:42:24" tests="0" file="cypress\integration\portfolioirr.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Verify Portfolio IRR Analytics" timestamp="2020-12-01T22:42:24" tests="1" failures="0" time="115.993">
+    <testcase name="Verify Portfolio IRR Analytics Test Portfolio IRR Analytics data" time="115.993" classname="Test Portfolio IRR Analytics data">
+    </testcase>
+  </testsuite>
+</testsuites>
