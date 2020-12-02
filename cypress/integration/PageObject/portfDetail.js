@@ -29,7 +29,7 @@ class portDetail {
           .get("[class='btn btn-primary']")
           .contains("Apply");
         apply.click({ force: true });
-        apply.wait(30000);
+        apply.wait(40000);
       });
     });
     return this;
