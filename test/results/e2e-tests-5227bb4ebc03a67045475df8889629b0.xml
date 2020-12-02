@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="51.107" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-12-02T15:42:30" tests="0" file="cypress\integration\dealDocuments.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Verify deal Documents" timestamp="2020-12-02T15:42:30" tests="1" failures="0" time="51.107">
+    <testcase name="Verify deal Documents Test deal Documents" time="51.107" classname="Test deal Documents">
+    </testcase>
+  </testsuite>
+</testsuites>

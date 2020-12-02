@@ -7,10 +7,8 @@ class dealDocs {
   }
   selectDealDocs() {
     const dealOption = cy
-      .get('[class="level-2"]')
-      .get('[class="display-link selected"]')
-      .get('[title="Deal Documents"]')
-      .contains("Deal Documents");
+    .get(':nth-child(1) > :nth-child(3) > a > .standard-button')
+      .contains("Documents");
     dealOption.click({ force: true });
     dealOption.wait(2000);
     const newFolder = cy
