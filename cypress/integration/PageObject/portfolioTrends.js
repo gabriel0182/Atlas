@@ -7,7 +7,6 @@ class portTrends {
       .contains("Portfolio Management");
       portMng.click({ force: true });
       const portTr = cy
-      .get('.level-2 > :nth-child(2) > a > .standard-button')
       .contains("Portfolio Trends")
       portTr.click({force: true})
       portTr.wait(2000)

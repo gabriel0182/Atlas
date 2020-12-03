@@ -7,8 +7,7 @@ class portDetail {
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const ptrfDetail = cy
-  .get('.level-2 > :nth-child(3) > a')
-      .contains("Portfolio Detail");
+    .contains("Portfolio Detail");
     ptrfDetail.click({ force: true });
     const testData = require("../../fixtures/prtfDetail.json");
     testData.forEach((testDataRow) => {

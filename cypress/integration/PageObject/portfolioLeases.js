@@ -5,7 +5,6 @@ class portfolioLeases {
       .contains("Portfolio Management");
     ptrfManager.click({ force: true });
     const expensesOption = cy
-    .get(':nth-child(9) > :nth-child(2) > a')
     .contains("Leases");
     expensesOption.click({ force: true });
     expensesOption.wait(2000);

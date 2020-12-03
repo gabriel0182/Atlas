@@ -7,8 +7,7 @@ class portfolioIRR {
       .contains("Portfolio Management");
       portMng.click({ force: true });
     const prtfIRR = cy
-    .get(':nth-child(5) > a > .standard-button')
-      .contains("Portfolio IRR Analytics");
+    .contains("Portfolio IRR Analytics");
     prtfIRR.click({ force: true });
     prtfIRR.wait(2000);
     return this;
@@ -38,11 +37,7 @@ class portfolioIRR {
   }
   verifyValues() {
     const ptrfDetail = cy
-    .get('[class="level-2 d-block"]')
-    .get('[class="display-link  "]')
-    .get('[href="/app/v2/portfolioanalytics"]')
-    .get('[class="standard-button null link"]')
-      .contains("Portfolio Detail");
+     .contains("Portfolio Detail");
     ptrfDetail.click({ force: true });
     const testData = require("../../fixtures/prtfDetail.json");
     testData.forEach((testDataRow) => {
@@ -76,10 +71,7 @@ class portfolioIRR {
           );
           equity.invoke("text").then((text5) => {
            const prtfIRROpt = cy
-          .get('[class="level-2 d-block"]')
-          .get('[class="display-link selected "]')
-          .get('[class="standard-button null link"]')
-              .contains("Portfolio IRR Analytics");
+            .contains("Portfolio IRR Analytics");
               prtfIRROpt.click({ force: true });
               prtfIRROpt.wait(2000);
             const testData1 = require("../../fixtures/prtfIRR.json");

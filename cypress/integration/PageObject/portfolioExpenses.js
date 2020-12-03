@@ -7,7 +7,6 @@ class portfolioExpenses {
         .contains("Portfolio Management");
         ptrfManager.click({ force: true });
         const expensesOption = cy
-        .get(':nth-child(9) > :nth-child(1) > a > .standard-button')
         .contains("Expenses")
         expensesOption.click({force: true})
         expensesOption.wait(2000)

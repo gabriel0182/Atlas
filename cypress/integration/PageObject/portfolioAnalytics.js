@@ -7,8 +7,7 @@ class portAnalytics {
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const portAnl = cy
-  .get('.level-2 > :nth-child(1) > a > .standard-button')
-      .contains("Portfolio Analytics");
+    .contains("Portfolio Analytics");
     portAnl.click({ force: true });
     portAnl.wait(2000);
     const testData = require("../../fixtures/prtfAnl.json");
