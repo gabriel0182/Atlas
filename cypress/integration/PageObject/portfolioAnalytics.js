@@ -7,9 +7,7 @@ class portAnalytics {
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const portAnl = cy
-      .get('[class="level-2 d-block"]')
-      .get('[class="display-link selected "]')
-      .get('[class="standard-button null link"]')
+  .get('.level-2 > :nth-child(1) > a > .standard-button')
       .contains("Portfolio Analytics");
     portAnl.click({ force: true });
     portAnl.wait(2000);

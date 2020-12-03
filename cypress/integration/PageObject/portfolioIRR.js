@@ -7,9 +7,7 @@ class portfolioIRR {
       .contains("Portfolio Management");
       portMng.click({ force: true });
     const prtfIRR = cy
-      .get('[class="level-2 d-block"]')
-      .get('[class="display-link selected "]')
-      .get('[class="standard-button null link"]')
+    .get(':nth-child(5) > a > .standard-button')
       .contains("Portfolio IRR Analytics");
     prtfIRR.click({ force: true });
     prtfIRR.wait(2000);

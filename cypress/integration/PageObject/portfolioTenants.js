@@ -7,10 +7,7 @@ class portfolioTenants {
       .contains("Portfolio Management");
     ptrfManager.click({ force: true });
     const tenantsPage = cy
-    .get('[class="level-2 d-block"]')
-    .get('[class="display-link  "]')
-    .get('[href="/app/v2/portfolioanalytics"]')
-    .get('[class="standard-button null link"]')
+    .get(':nth-child(7) > .display-link > a > .standard-button')
     .contains("Tenants");
     tenantsPage.click({ force: true });
     tenantsPage.wait(2000);

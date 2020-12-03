@@ -7,10 +7,7 @@ class portDetail {
       .contains("Portfolio Management");
     portMng.click({ force: true });
     const ptrfDetail = cy
-    .get('[class="level-2 d-block"]')
-    .get('[class="display-link  "]')
-    .get('[href="/app/v2/portfolioanalytics"]')
-    .get('[class="standard-button null link"]')
+  .get('.level-2 > :nth-child(3) > a')
       .contains("Portfolio Detail");
     ptrfDetail.click({ force: true });
     const testData = require("../../fixtures/prtfDetail.json");

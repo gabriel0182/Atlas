@@ -5,10 +5,7 @@ class portfolioLeases {
       .contains("Portfolio Management");
     ptrfManager.click({ force: true });
     const expensesOption = cy
-    .get('[class="level-2 d-block"]')
-    .get('[class="display-link  "]')
-    .get('[href="/app/v2/portfolioanalytics"]')
-    .get('[class="standard-button null link"]')
+    .get(':nth-child(9) > :nth-child(2) > a')
     .contains("Leases");
     expensesOption.click({ force: true });
     expensesOption.wait(2000);

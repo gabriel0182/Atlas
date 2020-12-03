@@ -7,10 +7,7 @@ class portTrends {
       .contains("Portfolio Management");
       portMng.click({ force: true });
       const portTr = cy
-      .get('[class="level-2 d-block"]')
-      .get('[class="display-link  "]')
-      .get('[href="/app/v2/portfolioanalytics"]')
-      .get('[class="standard-button null link"]')
+      .get('.level-2 > :nth-child(2) > a > .standard-button')
       .contains("Portfolio Trends")
       portTr.click({force: true})
       portTr.wait(2000)
