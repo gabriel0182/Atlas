@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="40.287" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-12-03T20:17:34" tests="0" file="cypress\integration\capitalStack.feature" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Verify Capital Stack" timestamp="2020-12-03T20:17:34" tests="1" failures="0" time="40.287">
+    <testcase name="Verify Capital Stack Test Capital Stack" time="40.287" classname="Test Capital Stack">
+    </testcase>
+  </testsuite>
+</testsuites>

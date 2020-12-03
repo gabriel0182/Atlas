@@ -11,8 +11,15 @@ class capitalStructure {
         });
       }
     selectCapital(){
-        const capitalSt = cy.get('[class="level-2"]')
-        .get('[title="Capital Structure"]')
+        const ecoNomics = cy
+        .get('[class="level-1"]')
+        .get('[class="level-2"]')
+        .get('[class="sub-menu"]')
+        .get('[class="grow-group"]')
+        .contains("Economics")
+        ecoNomics.click({force: true})
+        const capitalSt = cy.get('[class="grow-group"]')
+        .get('[href="/app/dashboard/capitalstructuretranche"]')
         .contains("Capital Structure")
         capitalSt.click({force: true})
         capitalSt.wait(3000)
@@ -28,6 +35,10 @@ class capitalStructure {
                 .click({force: true})
         })
         selectMezz.wait(2000)
+        /*const selectValue = cy
+        .get('.rt-tr-group > .rt-tr > :nth-child(1)')
+        selectValue.click({force: true})
+        selectValue.wait(2000)*/
         const capStpopOut = cy.get('[class="slidein"]')
         .get('[class="slide-content"]')
         .get('[class="page-title"]')
