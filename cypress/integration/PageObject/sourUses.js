@@ -2,8 +2,11 @@
 
 class sourUses {
     selectSourcesUses(){
-        const souRces = cy.get('[class="level-2"]')
-        .get('[title="Sources & Uses"]')
+        const suMmary = cy
+        .get('[class="level-2"]')
+        .contains("Summary")
+        suMmary.click({force: true})
+        const souRces = cy
         .contains("Sources & Uses")
         souRces.click({force: true})
         souRces.wait(3000)
