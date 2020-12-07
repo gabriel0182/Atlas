@@ -86,7 +86,8 @@ verifyColumn2.should('contain','UW NCF DY')
 }
 
 mapLoads(){
-const map = cy.get("[class='gm-style-pbc']")
+const map = cy
+.get('[style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"]')
 map.should('be.visible', true)
 return this;
 }

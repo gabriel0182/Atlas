@@ -21,13 +21,9 @@ class portfolioExpenses {
             type: testDataRow.type,
           };
           context(`Generating a test for ${data.property}`, () => {
-            const propertyType = cy.get('[class="css-1hwfws3 react-select__value-container"]')
-            .get('[class="css-1g6gooi"]')
-            .within(()=>{
-                cy.get('[id="react-select-2-input"]')
-                .clear({force: true})
-                .click({force: true})
-            })
+            const propertyType = cy
+            .get('.container-fluid > :nth-child(1) > .col-12 > .nativ-form-group > .css-1pcexqc-container > .css-1ofrjoz-control > .css-1hwfws3')
+              .click({force: true})
             propertyType.type(`${data.property}{enter}{enter}`)
             const applyProperty = cy
             .get(':nth-child(2) > .container-fluid > :nth-child(2) > .col-12 > .btn')
@@ -57,7 +53,8 @@ class portfolioExpenses {
         return this;
     }
     expensesMap(){
-        const getMap = cy.get('[class="gm-style-pbc"]')
+        const getMap = cy
+        .get('[style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"]')
         getMap.should('be.visible', true)
         return this;
     }
