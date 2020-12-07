@@ -4,6 +4,7 @@
     "execTimeout": 100000,
     "pageLoadTimeout": 300000,
     "trashAssetsBeforeRuns": true,
+    "numTestsKeptInMemory": 0,
     "chromeWebSecurity": false,
     "watchForFileChanges": false,
     "fileServerFolder": "./cypress/downloads",

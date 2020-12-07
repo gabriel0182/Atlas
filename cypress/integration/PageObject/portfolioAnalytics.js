@@ -59,7 +59,8 @@ class portAnalytics {
     noteType.should("contain", "Mezzanine");
   }
   dealpopOut(){
-    const dealPop = cy.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/*[local-name()='svg'][1]/*[name()='g'][1]/*[name()='g'][1]/*[name()='g'][6]/*[name()='path'][1]")
+    const dealPop = cy
+    .get('#deal-status-donut > .graphArea > .pieArea > :nth-child(5) > .clickable')
     dealPop.click({force: true})
     dealPop.wait(1000)
     const dealTitle =  

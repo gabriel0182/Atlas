@@ -6,6 +6,7 @@
   "execTimeout": 100000,
   "pageLoadTimeout": 300000,
   "chromeWebSecurity": false,
+  "numTestsKeptInMemory": 0,
   "watchForFileChanges": false,
   "pluginsFile": "cypress/plugins/index.js",
   "fileServerFolder": "./cypress/downloads",
