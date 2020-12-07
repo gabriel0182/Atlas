@@ -1,10 +1,12 @@
  class rentRoll{
     selectProperties(){
-        const proPerTies = cy.get('[class="display-link "]')
-        .get('[type="button"]')
+        const proPerTies = cy.get('[class="left-nav-container"]')
         .contains("Properties")
         proPerTies.click({force: true})
-        proPerTies.wait(3000)
+        const mngProperties =  cy.get('[class="left-nav-container"]')
+        .contains("Manage Properties")
+        mngProperties.click({force: true})
+        mngProperties.wait(2000)
         const properTy = cy.get('[class="rt-tr -odd"]')
         .get('[role="gridcell"]')
         .contains("1924")
@@ -22,9 +24,8 @@
         return this;
     }
     selectRentRoll(){
-        const rentOption = cy.get('[class="level-2"]')
-        .get('[class="display-link "]')
-        .get('[title="Rent Roll"]')
+         const rentOption = cy
+        .get('[class="left-nav-container"]')
         .contains("Rent Roll")
         rentOption.click({force: true})
         rentOption.wait(3000)
