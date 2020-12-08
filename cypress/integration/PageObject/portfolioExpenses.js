@@ -9,7 +9,7 @@ class portfolioExpenses {
         const expensesOption = cy
         .contains("Expenses")
         expensesOption.click({force: true})
-        expensesOption.wait(2000)
+        expensesOption.wait(4000)
         return this;
     }
     expensesSearch(){
