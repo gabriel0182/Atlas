@@ -9,17 +9,21 @@ class underWritings {
         });
       }
     selectUnderWritings(){
-        const proPerTies = cy.get('[class="display-link "]')
-        .get('[type="button"]')
+        const proPerTies = cy
+        .get('[class="left-nav-container"]')
         .contains("Properties")
         proPerTies.click({force: true})
         proPerTies.wait(3000)
+        const mngProperties =  cy.get('[class="left-nav-container"]')
+        .contains("Manage Properties")
+        mngProperties.click({force: true})
+        mngProperties.wait(2000)
         const properTy = cy.get('[class="rt-tr -odd"]')
         .get('[role="gridcell"]')
         .contains("1924")
         properTy.click({force: true})
-        const selUnderW = cy.get('[class="display-link "]')
-        .get('[title="Underwritings"]')
+        const selUnderW = cy
+        .get('[class="left-nav-container"]')
         .contains("Underwritings")
         selUnderW.click({force: true})
         selUnderW.wait(3000)
