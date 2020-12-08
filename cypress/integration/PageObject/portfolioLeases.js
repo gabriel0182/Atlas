@@ -33,7 +33,7 @@ class portfolioLeases {
           "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/fieldset[1]/form[2]/div[2]/button[1]"
         );
         applyCity.click({ force: true });
-        applyCity.wait(4000);
+        applyCity.wait(5000);
       });
     });
     return this;
