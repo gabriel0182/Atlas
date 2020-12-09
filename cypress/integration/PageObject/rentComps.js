@@ -3,19 +3,20 @@
 class rentComps {
   selectrentComps() {
     const proPerTies = cy
-      .get('[class="display-link "]')
-      .get('[type="button"]')
+      .get('[class="left-nav-container"]')
       .contains("Properties");
     proPerTies.click({ force: true });
-    proPerTies.wait(3000);
+    const mngProperties =  cy.get('[class="left-nav-container"]')
+    .contains("Manage Properties")
+    mngProperties.click({force: true})
+    mngProperties.wait(4000)
     const properTy = cy
       .get('[class="rt-tr -odd"]')
       .get('[role="gridcell"]')
       .contains("1924");
     properTy.click({ force: true });
     const rentCompsOption = cy
-      .get('[class="display-link "]')
-      .get('[title="Rent Comps"]')
+      .get('[class="left-nav-container"]')
       .contains("Rent Comps");
     rentCompsOption.click({ force: true });
     const getMap = cy.get(
