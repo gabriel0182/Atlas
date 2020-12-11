@@ -7,10 +7,12 @@ class assetTransaction {
     });
   }
   selectAssetOption() {
+    const ecoNomics = cy
+      .get('[class="left-nav-container"]')
+      .contains("Economics");
+      ecoNomics.click({ force: true });
     const asset = cy
-      .get('[class="display-link "]')
-      .get('[title="Asset Transaction History"]')
-      .contains("Asset Transaction History");
+       .contains("Asset Transaction History");
     asset.click({ force: true });
     const chooseNote = cy
       .get('[class="css-bg1rzq-control"]')
