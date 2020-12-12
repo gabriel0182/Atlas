@@ -2,6 +2,7 @@
 
     "testFiles": "**/*.{feature,features}",
     "videoCompression":false,
+    "video":false,
   "videoRecording": false,
   "screenshotOnRunFailure": false,
    "responseTimeout":5000,
