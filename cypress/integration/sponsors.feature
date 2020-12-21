@@ -12,6 +12,8 @@ Feature: Verify Sponsors
     
     And Confirm Data Loads
 
+    And Confirm you are able to create a Sponsor
+
     And Confirm Popout works
 
-    Then Confirm you are able to create and delete Sponsors
+    Then Confirm you are able to delete a Sponsors

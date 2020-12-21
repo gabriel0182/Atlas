@@ -4,11 +4,11 @@ import sponsorsDeal from "../PageObject/sponsorsDeal.js";
 
 const lg = new login();
 const nap = new napSearch();
-const DealSp = new sponsorsDeal();
+const dealSp = new sponsorsDeal();
 
 Given("The user is logged in the Webapp", () => {
   nap.getData();
-  //DealSp.getData2();
+  dealSp.getData2();
   lg.landing();
   lg.clientLogin();
   lg.credenTials();
@@ -21,13 +21,21 @@ When("search by Atlas Tower deal record", () => {
 });
 
 When("Go to Summary and Select Sponsors", () => {
-  DealSp.selectSponsors();
+  dealSp.selectSponsors();
 });
 
 when("Confirm Data Loads", () => {
-    DealSp.verifyData();
+  dealSp.verifyData();
 });
 
-when("Confirm Popout works", () => {});
+when("Confirm you are able to create a Sponsor", () => {
+  dealSp.createSponsor();
+});
 
-Then("Confirm you are able to create and delete Sponsors", () => {});
+when("Confirm Popout works", () => {
+  dealSp.confirmPOpout();
+});
+
+Then("Confirm you are able to delete a Sponsors", () => {
+  dealSp.deleteSponsor();
+});
