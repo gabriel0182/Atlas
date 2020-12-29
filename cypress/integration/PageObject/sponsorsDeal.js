@@ -21,12 +21,9 @@ class sponsorsDeal {
   }
 
   verifyData() {
-    const SponsorsTable = cy.get(":nth-child(2) > .col-sm-12");
+    const SponsorsTable = cy.get('#page-loan-sponsor')
     SponsorsTable.should("be.visible", true);
-    SponsorsTable.should("contain", "QA Corp 102020");
-    SponsorsTable.should("contain", "Sioni Group");
-    SponsorsTable.should("contain", "$100,000,000");
-    return this;
+       return this;
   }
   createSponsor() {
     const addSponsor = cy.get(
@@ -64,7 +61,8 @@ class sponsorsDeal {
   deleteSponsor() {
     const deleteButton = cy.get(".d-flex > .btn");
     deleteButton.click({ force: true });
-    const delConfirm = cy.get(".jss268 > .red-button");
+    const delConfirm = cy.get(".red-button")
+    .contains("Delete")
     delConfirm.click({ force: true });
     const confirmDelete = cy.get('[class="container-fluid"]')
     .get('[class="popup-header row"]')
