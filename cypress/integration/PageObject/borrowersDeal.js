@@ -1,6 +1,16 @@
 ///  <reference types="cypress"/>
 
 class borrowersDeal {
+  getData2() {
+    let date = Cypress.moment().format("YY,MM,dd, hh");
+    let date1 = Cypress.moment().format("D");
+    cy.fixture("borrowers.json").then((data) => {
+      this.name = `AUT Borrower${date}`;
+      (this.entity = data.entity);
+      this.date = `${date1}`;
+      (this.state = data.state)
+    });
+  }
   selectBorrowers() {
     const suMmary = cy.get('[class="left-nav-container"]').contains("Summary");
     suMmary.click({ force: true });
@@ -30,5 +40,44 @@ class borrowersDeal {
     dealID.should("contain", "5682");
     return this;
   }
+addBorrowers(){
+const closePopout = cy
+.get('.information-button-close > img')
+closePopout.click({force: true})
+closePopout.wait(1000)
+const createButton = cy
+.get('.container-fluid > :nth-child(1) > .d-flex > .nativ-button') 
+createButton.click({force: true})
+createButton.wait(1000)
+const borrowerName = cy
+.get('#BorrowerName')
+borrowerName.click({force: true})
+borrowerName.type(`${this.name}`)
+const borrowerEntity = cy
+.get('#BorrowerEntityType')
+borrowerEntity.select(`${this.entity}`)
+const borrowerDate = cy
+.get('#BorrowerDateFormed')
+borrowerDate.click({force: true}) 
+const selecDay =cy.get('.react-datepicker__month-container')
+.get('[class="react-datepicker__current-month"]')
+.get('[class="react-datepicker__week"]')
+.contains(`${this.date}`)
+selecDay.click({force: true})
+const borrowerState = cy
+.get('#StateofFormation')
+borrowerState.select(`${this.state}`)
+const saveBorrower = cy
+.get('.green-button')
+saveBorrower.click({force: true})
+saveBorrower.wait(1000)
+const table = cy
+    .get(".col-sm-12");
+    table.should("contain",`${this.name}`);
+    const confirmBorrower = cy.get('[class="col-10"]')
+    .get('[class="popup-header row"]')
+    confirmBorrower.should('contain', 'Borrower created!')
+return this;
+}
 }
 export default borrowersDeal;

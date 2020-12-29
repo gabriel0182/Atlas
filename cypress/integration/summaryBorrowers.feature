@@ -10,4 +10,6 @@ Feature: Verify Borrowers
 
     And Go to Summary and Select Borrowers option 
 
-    Then Confirm Data Loads and Popout works
+    And Confirm Data Loads and Popout works
+
+    Then Confirm I can add Borrowers

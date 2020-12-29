@@ -8,7 +8,7 @@ const dealBorrow = new borrowersDeal();
 
 Given("The user is logged in the Webapp", () => {
   nap.getData();
-  //dealBorrow.getData2();
+  dealBorrow.getData2();
   lg.landing();
   lg.clientLogin();
   lg.credenTials();
@@ -24,6 +24,10 @@ When("Go to Summary and Select Borrowers option", () => {
   dealBorrow.selectBorrowers();
 });
 
-Then("Confirm Data Loads and Popout works", () => {
+When("Confirm Data Loads and Popout works", () => {
   dealBorrow.confirmData();
+});
+
+Then("Confirm I can add Borrowers", () => {
+  dealBorrow.addBorrowers();
 });
